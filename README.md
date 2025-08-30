@@ -1,4 +1,4 @@
-# 📈 Tesla Stock Price Prediction — Time Series Forecasting with LSTM
+# 📈 Tesla Stock Price Prediction — LSTM (Time Series)
 
 ## 📌 Overview
 
@@ -35,40 +35,40 @@ To better understand the behaviour and relationships within the stock price data
 ### 1. Open vs Close Prices Over Time
 A multi-year line plot was created to visualize `Open` and `Close` price trends. This graph illustrates how the stock opened and closed each trading day over time. The overlay helps identify:
 
-- Annual trends in stock volatility and growth
-- Market momentum and directional shifts across years
+- Annual trends in stock volatility and growth.
+- Market momentum and directional shifts across years.
 
-<img src="images/image_1.png" alt="Open vs Close Prices Over Time" width="500"/>
+<img src="images/image_1.png" alt="Open vs Close Prices Over Time" width="650"/>
 
 
 ### 2. High vs Low Price Relationship
 A scatter plot comparing `High` vs `Low` prices confirms a strong linear relationship, as expected. Key insights include:
 
-- Daily price ranges are relatively tight with few outliers
-- A nearly 1:1 trend indicates typical intraday trading stability
-- Occasional wider spreads may point to higher volatility sessions
+- Daily price ranges are relatively tight with few outliers.
+- A nearly 1:1 trend indicates typical intraday trading stability.
+- Occasional wider spreads may point to higher volatility sessions.
 
-<img src="images/image_3.png" alt="High vs Low Price Relationship" width="500"/>
+<img src="images/image_3.png" alt="High vs Low Price Relationship" width="650"/>
 
 
 ### 3. Open vs Close Price Relationship
 This scatter plot compares `Open` and `Close` prices to assess how often the stock ends higher or lower than it starts:
 
-- Points above the diagonal represent positive days
-- Points below the diagonal represent negative days
-- The clustering around the diagonal indicates many days with minimal change
+- Points above the diagonal represent positive days.
+- Points below the diagonal represent negative days.
+- The clustering around the diagonal indicates many days with minimal change.
 
-<img src="images/image_2.png" alt="Open vs Close Price Relationship" width="500"/>
+<img src="images/image_2.png" alt="Open vs Close Price Relationship" width="650"/>
 
 
 ### 4. Correlation Matrix
 A correlation heatmap was generated to identify statistical relationships between all numerical features:
 
-- Strong positive correlation between `Open`, `High`, `Low`, and `Close` prices
-- `Volume` shows relatively weak correlation with price-based features, suggesting it behaves independently
-- The heatmap supports feature selection and can help inform future multivariate modeling
+- Strong positive correlation between `Open`, `High`, `Low`, and `Close` prices.
+- `Volume` shows relatively weak correlation with price-based features, suggesting it behaves independently.
+- The heatmap supports feature selection and can help inform future multivariate modeling.
 
-<img src="images/image_4.png" alt="Heatmap" width="500"/>
+<img src="images/image_4.png" alt="Heatmap" width="650"/>
 
 
 ---
@@ -86,8 +86,6 @@ A correlation heatmap was generated to identify statistical relationships betwee
 
 > 📦 Total Trainable Parameters: 206,465  
 > 🧊 Non-trainable Parameters: 0  
-> 📁 Model Size ≈ 806 KB
-
 
 ---
 
@@ -104,7 +102,7 @@ A correlation heatmap was generated to identify statistical relationships betwee
 
 The model’s predictions closely align with the actual closing prices, indicating that the LSTM layers effectively captured temporal dynamics in the dataset.
 
-<img src="images/image_5.png" alt="Actual vs. Predicted Prices" width="500"/>
+<img src="images/image_5.png" alt="Actual vs. Predicted Prices" width="650"/>
 
 
 ---
@@ -130,7 +128,5 @@ The model’s predictions closely align with the actual closing prices, indicati
 
 - Explore alternative architectures such as `GRU`, `Transformer`, or hybrid CNN–LSTM models
 - Deploy model as a real-time prediction app using `Streamlit` or `Flask`
-
----
 
 
