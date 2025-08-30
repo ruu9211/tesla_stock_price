@@ -28,18 +28,66 @@ Develop a deep learning model using LSTM architecture to predict Tesla’s stock
 
 ---
 
-## 🧠 Model Architecture Summary
-Layer (type)      Output Shape    Param #  
-=========================================
-LSTM (128)        (None, 14,128)   66,560  
-LSTM (128)        (None,128)      131,584  
-Dense (64, relu)  (None,64)         8,256  
-Dropout (0.2)     (None,64)             0  
-Dense (1, tanh)   (None,1)             65  
-=========================================
-Total params: 206,465
+## 📊 Exploratory Data Analysis (EDA)
+
+To better understand the behaviour and relationships within the stock price data, several exploratory visualizations were generated:
+
+### 1. Open vs Close Prices Over Time
+A multi-year line plot was created to visualize `Open` and `Close` price trends. This graph illustrates how the stock opened and closed each trading day over time. The overlay helps identify:
+
+- Annual trends in stock volatility and growth
+- Market momentum and directional shifts across years
+
+<img src="images/image_1.png" alt="Open vs Close Prices Over Time" width="500"/>
+
+
+### 2. High vs Low Price Relationship
+A scatter plot comparing `High` vs `Low` prices confirms a strong linear relationship, as expected. Key insights include:
+
+- Daily price ranges are relatively tight with few outliers
+- A nearly 1:1 trend indicates typical intraday trading stability
+- Occasional wider spreads may point to higher volatility sessions
+
+<img src="images/image_3.png" alt="High vs Low Price Relationship" width="500"/>
+
+
+### 3. Open vs Close Price Relationship
+This scatter plot compares `Open` and `Close` prices to assess how often the stock ends higher or lower than it starts:
+
+- Points above the diagonal represent positive days
+- Points below the diagonal represent negative days
+- The clustering around the diagonal indicates many days with minimal change
+
+<img src="images/image_2.png" alt="Open vs Close Price Relationship" width="500"/>
+
+
+### 4. Correlation Matrix
+A correlation heatmap was generated to identify statistical relationships between all numerical features:
+
+- Strong positive correlation between `Open`, `High`, `Low`, and `Close` prices
+- `Volume` shows relatively weak correlation with price-based features, suggesting it behaves independently
+- The heatmap supports feature selection and can help inform future multivariate modeling
+
+<img src="images/image_4.png" alt="Heatmap" width="500"/>
+
 
 ---
+
+## 🧠 Model Architecture Summary
+
+| Layer Name     | Layer Type | Output Shape | Parameters |
+|----------------|------------|---------------|------------|
+| `lstm_8`       | LSTM       | (None, 14, 128) | 66,560     |
+| `lstm_9`       | LSTM       | (None, 128)     | 131,584    |
+| `dense_8`      | Dense      | (None, 64)      | 8,256      |
+| `dropout_4`    | Dropout    | (None, 64)      | 0          |
+| `dense_9`      | Dense      | (None, 1)       | 65         |
+| **Total**      |            |                 | **206,465** |
+
+> 📦 Total Trainable Parameters: 206,465  
+> 🧊 Non-trainable Parameters: 0  
+> 📁 Model Size ≈ 806 KB
+
 
 ---
 
@@ -56,6 +104,7 @@ Total params: 206,465
 
 The model’s predictions closely align with the actual closing prices, indicating that the LSTM layers effectively captured temporal dynamics in the dataset.
 
+<img src="images/image_5.png" alt="Actual vs. Predicted Prices" width="500"/>
 
 
 ---
@@ -65,7 +114,6 @@ The model’s predictions closely align with the actual closing prices, indicati
 - **Temporal Modeling**: LSTM networks are highly effective for learning sequential dependencies in time-series data such as stock prices.
 - **Data Preparation**: Proper normalization and sequence generation were critical for model performance.
 - **Overfitting Control**: `EarlyStopping` callback based on validation loss helped reduce overfitting and preserved model generalization.
-- **Real-World Challenges**: Missing dates (e.g., weekends, holidays) are typical in stock market data and must be accounted for in the modeling process.
 
 ---
 
@@ -80,8 +128,6 @@ The model’s predictions closely align with the actual closing prices, indicati
 
 ## 🚀 Potential Improvements
 
-- Integrate additional technical indicators (e.g., moving averages, RSI, MACD)
-- Incorporate multi-variate signals (e.g., macroeconomic indicators, news sentiment)
 - Explore alternative architectures such as `GRU`, `Transformer`, or hybrid CNN–LSTM models
 - Deploy model as a real-time prediction app using `Streamlit` or `Flask`
 
