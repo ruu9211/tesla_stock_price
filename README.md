@@ -38,7 +38,7 @@ A multi-year line plot was created to visualize `Open` and `Close` price trends.
 - Annual trends in stock volatility and growth.
 - Market momentum and directional shifts across years.
 
-<img src="images/image_1.png" alt="Open vs Close Prices Over Time" width="650"/>
+<img src="images/image_1.png" alt="Open vs Close Prices Over Time" width="700"/>
 
 
 ### 2. High vs Low Price Relationship
@@ -48,7 +48,7 @@ A scatter plot comparing `High` vs `Low` prices confirms a strong linear relatio
 - A nearly 1:1 trend indicates typical intraday trading stability.
 - Occasional wider spreads may point to higher volatility sessions.
 
-<img src="images/image_3.png" alt="High vs Low Price Relationship" width="650"/>
+<img src="images/image_3.png" alt="High vs Low Price Relationship" width="700"/>
 
 
 ### 3. Open vs Close Price Relationship
@@ -58,7 +58,7 @@ This scatter plot compares `Open` and `Close` prices to assess how often the sto
 - Points below the diagonal represent negative days.
 - The clustering around the diagonal indicates many days with minimal change.
 
-<img src="images/image_2.png" alt="Open vs Close Price Relationship" width="650"/>
+<img src="images/image_2.png" alt="Open vs Close Price Relationship" width="700"/>
 
 
 ### 4. Correlation Matrix
@@ -68,7 +68,7 @@ A correlation heatmap was generated to identify statistical relationships betwee
 - `Volume` shows relatively weak correlation with price-based features, suggesting it behaves independently.
 - The heatmap supports feature selection and can help inform future multivariate modeling.
 
-<img src="images/image_4.png" alt="Heatmap" width="650"/>
+<img src="images/image_4.png" alt="Heatmap" width="700"/>
 
 
 ---
@@ -102,7 +102,7 @@ A correlation heatmap was generated to identify statistical relationships betwee
 
 The model’s predictions closely align with the actual closing prices, indicating that the LSTM layers effectively captured temporal dynamics in the dataset.
 
-<img src="images/image_5.png" alt="Actual vs. Predicted Prices" width="650"/>
+<img src="images/image_5.png" alt="Actual vs. Predicted Prices" width="700"/>
 
 
 ---
